@@ -3,10 +3,9 @@ let hr: number = 7,
     secs: number = 00
 
 setInterval((): void => {
-   if (secs <= 0) mins-- && (secs = 60)
-      else if (secs > 0) secs--
-      else if (mins > 0) mins--
-      else hr-- && (mins = 60)
+   if (secs > 0) secs--
+      else if (mins > 0) mins-- && (secs = 59)
+      else if (hr > 0) hr-- && (mins = 59) && (secs = 59)
 
    btn.innerText = `${hr}:${mins}:${secs}`
-})
+}, 1000)
